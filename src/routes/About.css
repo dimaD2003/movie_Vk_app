@@ -1,17 +1,5 @@
 .about__container {
-  /* 
-  padding: 20px;
-  border-radius: 5px;
   
-  margin: 0 auto;
-  position: absolute;
-  top: 30%;
-  
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 300; */
 background-color: rgba(3, 3, 3, 0.522);
 width: 50%;
 height: 100px;
