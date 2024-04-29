@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Movie.css";
 
-function Movie({ id, year, title, summary, poster, genres, large_cover_image, date_uploaded,rating, language }) {
+function Movie({ id, year, title, summary, poster, genres, large_cover_image, date_uploaded,rating, language,torrents }) {
   return (
     <div >
       <Link
@@ -19,7 +19,8 @@ function Movie({ id, year, title, summary, poster, genres, large_cover_image, da
             large_cover_image,
             date_uploaded,
             rating, 
-            language
+            language,
+            torrents,
 
           },
         }}
@@ -60,6 +61,7 @@ Movie.propTypes = {
   poster: PropTypes.string.isRequired,
   large_cover_image: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  torrents: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default Movie;

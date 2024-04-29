@@ -1,3 +1,7 @@
+.cont{
+  flex-direction: column;
+  min-height: 73vh;
+}
 .about__container {
   
 background-color: rgba(3, 3, 3, 0.522);
@@ -5,6 +9,8 @@ width: 50%;
 height: 100px;
 margin: 0 auto;
 display: flex;
+    flex-direction: column;
+    
 justify-content: center;
 align-items: center;
  box-shadow: 0 13px 27px -5px rgba(90, 90, 98, 0.448),

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Movie from "../components/Movie";
 import "./Home.css";
+// import Footer from "../components/Footer";
 
 class Home extends React.Component{
   
@@ -29,7 +30,7 @@ componentDidMount(){
 render(){
  const {isLoading, movies}= this.state;
  
- return (
+ return ( <>
    <section className='container'>
      
    {isLoading ? 
@@ -49,9 +50,14 @@ render(){
            large_cover_image={item.large_cover_image}
            date_uploaded={item.date_uploaded}
            rating={item.rating}
-           language={item.language}></Movie></div> 
-     }) }
-    </section>)
+           language={item.language}
+           torrents={(item.torrents)}></Movie></div> 
+     }) } 
+     
+    </section>
+    {/* <Footer/> */}
+    </>)
+   
 }
 }
 

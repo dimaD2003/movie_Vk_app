@@ -5,15 +5,21 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Detail from "./components/Detail";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
-  return (
-    <HashRouter>
+  return ( <>
+  <HashRouter>
       <Navigation />
-      <Route path="/" exact={true} component={Home} />
+      
+      <Route path="/" exact={true} component={Home} /> 
       <Route path="/about" component={About} />
       <Route path="/movie/:id" component={Detail} />
-    </HashRouter>
+     <Footer></Footer>
+     </HashRouter>
+   
+  </>
+    
   );
 }
 

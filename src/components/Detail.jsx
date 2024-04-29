@@ -13,7 +13,7 @@ class Detail extends React.Component {
   render() {
     const { location } = this.props;
     if (location.state) {
-      return <div className="contant">
+      return    <div className="contant">
       <div className="details_img">
         <img src={location.state.large_cover_image} alt="" />
       </div>
@@ -38,6 +38,10 @@ class Detail extends React.Component {
                   <tr>
                     <td> <b>Обновление:</b></td>
                     <td>{location.state.date_uploaded}</td>
+                  </tr>
+                  <tr>
+                    <td> <b>Cсылка <br /> для скачивания:</b></td>
+                    {location.state.torrents[0].url !='' ? <td> <a href={location.state.torrents[0].url}>  <button> Скачать торрент-файл</button></a></td> : <td> Нет доступа</td> }
                   </tr>
                 </table>
               </div>

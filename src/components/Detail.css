@@ -18,6 +18,33 @@
     text-align: center;
     color: aliceblue;
 }
+button{
+    box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgba(229, 233, 190, 0.812);
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px;
+  padding: 0.2em 1.8em;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
+  transition: box-shadow 400ms ease-in-out, color 400ms ease-in-out;
+ 
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+}
+
+
 
 .details_descr{
     text-align:  center;
