@@ -2,42 +2,53 @@ import React from "react";
 import axios from "axios";
 import Movie from "../components/Movie";
 import "./Home.css";
+import { useState, useEffect} from "react";
+import Searching from "../components/Searching";
 // import Footer from "../components/Footer";
 
-class Home extends React.Component{
-  
-  state = {
- isLoading: true,
- movies:[],
-};
+export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
+
+const [filteredMovies , setFilteredMovies] = useState([]);
 
 
-getMovies = async()=>{
+const getMovies = async()=>{
 const {
  data:{
    data:{movies}
  }
 } = await axios.get('https://yts.mx/api/v2/list_movies.json?sort_by=rating')
- this.setState({movies:movies, isLoading: false})          
+ setMovies(movies);
+ setFilteredMovies(movies); //init all mv
+  setIsLoading(false)        
 }
 
 
 
 
-componentDidMount(){
- this.getMovies()
-}
-render(){
- const {isLoading, movies}= this.state;
+useEffect(() => {
+  getMovies();
+}, []);
+
+
+const handleSearch = (query) => {
+  const filtered = movies.filter((movie) =>
+    movie.title.toLowerCase().includes(query.toLowerCase())
+  );
+  setFilteredMovies(filtered);
+};
+
+
  
  return ( <>
    <section className='container'>
-     
+    <  Searching searchItem={handleSearch}/> 
    {isLoading ? 
    <div className='load'>
      <span>Loading....</span>
    </div > 
-   : movies.map(item =>{console.log(item);
+   : filteredMovies.map(item =>{console.log(item);
         return <div key={item.id+2} className='all_movies'>
          <Movie 
            key={item.id} 
@@ -59,6 +70,6 @@ render(){
     </>)
    
 }
-}
 
-export default Home;
+
+

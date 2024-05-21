@@ -10,8 +10,7 @@
   max-width: 70%;
   display: block;
       margin: 0 auto;
-  -webkit-box-shadow: -6px 0px 18px 1px rgba(255,255,255,0.86); 
-box-shadow: -6px 0px 18px 1px rgba(255,255,255,0.46);
+  
 }
 
 .movies_item_title, 
